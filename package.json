@@ -1,0 +1,15 @@
+{
+  "name": "Ultraleaf",
+  "description": "An offline Overleaf Client",
+  "author": "John Elizarraras",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder "
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

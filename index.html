@@ -1,0 +1,19 @@
+<html>
+<body>
+    <webview id="foo" src="https://www.overleaf.com/"style="display:inline-flex"></webview>
+</body>
+<!--<script>
+    // const screen = require('electron').screen;
+    const remote = require('electron').remote;
+    // const display = screen.getPrimaryDisplay();
+    var win = remote.getCurrentWindow();
+    win.on('resize', function(e){
+        var $ = require("jquery");
+        const screen = require('electron').screen;
+        const display = screen.getPrimaryDisplay();
+        $("#foo").attr("minwidth",display.workArea["width"]);
+        $("#foo").attr("minheight",display.workArea["height"]);
+    });
+// console.log(display.workArea)
+    </script>-->
+</html>
