@@ -10,5 +10,5 @@ Users will have to first install [git]() **and add it to your PATH**
 git clone https://github.com/iblacksand/Ultraleaf.git
 cd Ultraleaf
 npm install
-npm run .
+npm start
 ```
