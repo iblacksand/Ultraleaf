@@ -4,12 +4,17 @@ const url = require('url');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win;
+let windows= [];
+let windowcount = 0;
 
-function createWindow () {
+function createWindow (surlpath) {
   // Create the browser window.
+  let win;
+  var lurlpath = JSON.stringify(surlpath);
+  console.log(lurlpath);
   win = new BrowserWindow({width: 800, height: 600});
-
+  windows.push(win);
+  windowcount++;
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -46,8 +51,9 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (win === null) {
-    createWindow();
+  if (windows[windowcount] === null) {
+    let path = 'index.html';
+    createWindow(path);
   }
 });
 
