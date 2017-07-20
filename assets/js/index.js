@@ -1,7 +1,5 @@
 function button1_click() {
-    // console.log(require('electron').remote.getGlobal('OpenFile')());
-    // createWindow('Overleaf-Web.html');
-
+    require('electron').remote.getGlobal('loadUrlInWindow')("https://www.overleaf.com")
 }
 
 function button2_click() {
@@ -13,9 +11,11 @@ function log(message){
 }
 
 function test() {
-    var git = require('./assets/js/git/git.js');   // The power of Node.JS
-    // git.sync("C:/Users/user/Documents/UltraleafTestingRepo")
-    git.setRepo("C:/Users/user/Documents/UltraleafTestingRepo");
-    git.sync();
-    log(git.tlog);
+    // var git = require('./assets/js/git/git.js');   // The power of Node.JS
+    // // git.sync("C:/Users/user/Documents/UltraleafTestingRepo")
+    // git.setRepo("C:/Users/user/Documents/UltraleafTestingRepo");
+    // git.sync();
+    // log(git.tlog);
+    var config = require('./assets/js/config.js');
+    config.test();
 }

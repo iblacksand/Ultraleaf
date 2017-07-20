@@ -8,12 +8,12 @@ let windows= [];
 let windowcount = 0;
 
 
-global.createOverleaf = function(){
+global.loadUrlInWindow = function(url){
   win = new BrowserWindow({width: 800, height: 600});
   windows.push(win);
   windowcount++;
   // and load the index.html of the app.
-  win.loadURL("https://www.overleaf.com");
+  win.loadURL(url);
 
   // Open the DevTools.
   // win.webContents.openDevTools()
