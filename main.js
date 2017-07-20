@@ -7,6 +7,7 @@ const url = require('url');
 let windows= [];
 let windowcount = 0;
 
+
 global.createOverleaf = function(){
   win = new BrowserWindow({width: 800, height: 600});
   windows.push(win);

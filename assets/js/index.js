@@ -1,6 +1,7 @@
 function button1_click(){
-    require('electron').remote.getGlobal('createOverleaf')();
+    // console.log(require('electron').remote.getGlobal('OpenFile')());
     // createWindow('Overleaf-Web.html');
+   
 }
 
 function button2_click(){

@@ -1,38 +1,40 @@
 <html>
-    <head>
-        <style type="text/css">
-            @import url("./node_modules/bulma/css/bulma.css");
-        </style>
-        <!-- <script src="assets/js/index.js"></script> -->
-    <style type="text/css" media="screen">
-    body {
-        overflow: hidden;
-    }
-    #editor {
-        margin: 0;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-  </style>
-</head>
-<body>
 
-<pre id="editor">
+<head>
+    <style type="text/css">
+        @import url("./node_modules/bulma/css/bulma.css");
+    </style>
+    <!-- <script src="assets/js/index.js"></script> -->
+    <style type="text/css" media="screen">
+        body {
+            overflow: hidden;
+        }
+
+        #editor {
+            margin: 0;
+            position: absolute;
+            top: 50;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="open_button" class="button" onclick="open_button()">Open File</button>
+    <pre id="editor">
 \documentclass{article}
 \title{Hello World}
 \author{John Elizarraras}
 \begin{document}
 \maketitle
 \end{document}
-}</pre>
+</pre>
 
-<script src="assets/js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/tomorrow");
-    editor.session.setMode("ace/mode/latex");
-</script>
+    <script src="assets/js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/src-min-noconflict/ext-language_tools.js"></script>
+    <script src="assets/js/offline.js"></script>
+
 </html>
