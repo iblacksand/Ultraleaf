@@ -13,7 +13,7 @@ Just download git.js and put it in your /js folder(or where ever you put your ja
 First you need to require git.js
 
 ```javascript
-var git = require('./assets/js/git/git.js'); // ./assets/js/git/git.js is the location where you put git.js
+var git = require('path_to_git.js'); // where path_to_git.js is the location where you put git.js (ex './assets/js/git/git.js')
 ```
 
 Then you need to set the directory of the repo
