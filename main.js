@@ -7,17 +7,16 @@ const url = require('url');
 let windows= [];
 let windowcount = 0;
 
-function createWindow (surlpath) {
+function createWindow(urlpath) {
   // Create the browser window.
   let win;
-  var lurlpath = JSON.stringify(surlpath);
-  console.log(lurlpath);
+  //console.log(urlpath);
   win = new BrowserWindow({width: 800, height: 600});
   windows.push(win);
   windowcount++;
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, urlpath),
     protocol: 'file:',
     slashes: true
   }));
@@ -37,7 +36,9 @@ function createWindow (surlpath) {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', () => {
+  createWindow('index.html')
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -52,8 +53,7 @@ app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (windows[windowcount] === null) {
-    let path = 'index.html';
-    createWindow(path);
+    createWindow(urload);
   }
 });
 
