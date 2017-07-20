@@ -46,7 +46,7 @@ exports.sync = function(){
     exports.pushAll();
 }
 
-exports.addFile = function(path){
+exports.add = function(path){
     const{exec} = require('child_process');
     exec("git add " + path, {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
 }
@@ -54,16 +54,16 @@ exports.addFile = function(path){
 exports.addFiles = function(files){
     const{exec} = require('child_process');
     for(var i = 0; i < files.length; i++){
-        addFile(files[i]);
+        add(files[i]);
     }
-}
-
-exports.addDirectory = function(dir){
-    const{exec} = require('child_process');
-    exec("git add " + dir, {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
 }
 
 exports.commit = function(message){
     const{exec} = require('child_process');
     exec("git commit -m \"" + dir+"\"", {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
+}
+
+exports.push = function(){
+    const{exec} = require('child_process');
+    exec("git push", {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
 }

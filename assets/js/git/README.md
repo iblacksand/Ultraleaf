@@ -22,6 +22,14 @@ Then you need to set the directory of the repo
 git.setRepo("C:/examplerepo");
 ```
 
+### Push
+
+To push the repo all you do is 
+
+```javascript
+git.push();
+```
+
 ### Pull
 
 To pull from the repository all you do is
@@ -48,21 +56,26 @@ This will pull from the repository and then push the repo
 git.sync();
 ```
 
-### Add file
+### Add a file a directory
 
-This will add the file given to the next commit
+This will add the file or the directory given to the next commit
 
 ```javascript
+// Adding File
 var file = "./example.txt";
-git.addFile(file);
+git.add(file);
+
+// Adding directory
+var dir = "/example/";
+git.add(dir);
 ```
 
-### Add files
+### Add multiple files
 
 This will add the files given to the next commit
 
 ```javascript
-var files = ["./example.txt", "./readme.md", "main.js";// all files given in a string array
+var files = ["./example.txt", "./readme.md", "main.js"];// all files given in a string array
 git.addFiles(files);
 ```
 
