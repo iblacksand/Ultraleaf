@@ -17,8 +17,8 @@ function getFile() {
         {
             defaultPath: 'c:/',
             filters: [
-                { name: 'All Files', extensions: ['*'] },
-                { name: 'Tex File', extensions: ['tex'] }
+                { name: 'All Files', extensions: ['*'] }
+                // { name: 'Tex File', extensions: ['tex'] }
             ],
             properties: ['openFile']
         }

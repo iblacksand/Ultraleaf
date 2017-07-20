@@ -1,12 +1,16 @@
 
 var exports = module.exports;
 
-global.tlog = "";
+var uselogging;
 
 function log(message){
-    console.log(message + "\n");
+    if(uselogging) console.log(message + "\n");
     tlog += message + "\n";
 }
+
+exports.enableConsoleLogging = function(){uselogging=true};
+exports.disableConsoleLogging = function(){uselogging=false};
+exports.getLog = function(){return tlog};
 
 var repo = "";
 
@@ -33,11 +37,33 @@ exports.pushAll = function() {
 exports.pull = function(){
     const{exec} = require('child_process');
     exec("git pull", {cwd: repo}, (err, stdout, stderr) => {
-        log(stdout + "umm");
+        log(stdout);
     });
 }
 
 exports.sync = function(){
     exports.pull();
     exports.pushAll();
+}
+
+exports.addFile = function(path){
+    const{exec} = require('child_process');
+    exec("git add " + path, {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
+}
+
+exports.addFiles = function(files){
+    const{exec} = require('child_process');
+    for(var i = 0; i < files.length; i++){
+        addFile(files[i]);
+    }
+}
+
+exports.addDirectory = function(dir){
+    const{exec} = require('child_process');
+    exec("git add " + dir, {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
+}
+
+exports.commit = function(message){
+    const{exec} = require('child_process');
+    exec("git commit -m \"" + dir+"\"", {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
 }

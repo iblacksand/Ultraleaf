@@ -47,3 +47,45 @@ This will pull from the repository and then push the repo
 ```javascript
 git.sync();
 ```
+
+### Add file
+
+This will add the file given to the next commit
+
+```javascript
+var file = "./example.txt";
+git.addFile(file);
+```
+
+### Add files
+
+This will add the files given to the next commit
+
+```javascript
+var files = ["./example.txt", "./readme.md", "main.js";// all files given in a string array
+git.addFiles(files);
+```
+
+### Commit files
+
+This will commit added files with the given message
+
+```javascript
+git.commit("my commit message");
+```
+
+### Logging
+
+Git.js will log into the console what git puts out by default. You can disable/enable this feature.
+
+```javascript
+git.enableConsoleLogging()// enables console logging
+
+git.disableConsoleLogging()// disables console logging
+```
+
+Regardless of the settings set above, you can get the all of the console output from the git object like so:
+
+```javascript
+git.getLog()
+```
