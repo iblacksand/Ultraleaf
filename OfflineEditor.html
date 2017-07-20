@@ -23,7 +23,61 @@
 </head>
 
 <body>
+    <div class="control">
     <button id="open_button" class="button" onclick="open_button()">Open File</button><button id="open_button" class="button" onclick="save_button()">Save File</button>
+    <div class="select">
+      <select id="theme" onchange="theme_change()">
+        <option value=0>Chrome</option>
+
+<option value=1>Clouds</option>
+
+<option value=2>Clouds Midnight</option>
+
+<option value=3>Cobalt</option>
+
+<option value=4>Crimson Editor</option>
+
+<option value=5>Dawn</option>
+
+<option value=6>Eclipse</option>
+
+<option value=7>Idle Fingers</option>
+
+<option value=8>Kr Theme</option>
+
+<option value=9>Merbivore</option>
+
+<option value=10>Merbivore Soft</option>
+
+<option value=11>Mono Industrial</option>
+
+<option value=12>Monokai</option>
+
+<option value=13>Pastel On Dark</option>
+
+<option value=14>Solarized Dark</option>
+
+<option value=15>Solarized Light</option>
+
+<option value=16>TextMate</option>
+
+<option value=17>Tomorrow</option>
+
+<option value=18>Tomorrow Night</option>
+
+<option value=19>Tomorrow Night Blue</option>
+
+<option value=20>Tomorrow Night Bright</option>
+
+<option value=21>Tomorrow Night Eighties</option>
+
+<option value=22>Twilight</option>
+
+<option value=23>Vibrant Ink</option>
+      </select>
+    </div>
+  </div>
+
     <pre id="editor">
 \documentclass{article}
 \title{Hello World}
