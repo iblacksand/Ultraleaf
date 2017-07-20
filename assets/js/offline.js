@@ -2,7 +2,8 @@ var editor = ace.edit("editor");
 editor.setTheme("ace/theme/tomorrow");
 editor.session.setMode("ace/mode/latex");
 ace.require("ace/ext/language_tools");
-var modelist = ace.require("ace/ext/modelist");
+require("./assets/js/src-min-noconflict/ext-modelist");
+ var modelist = ace.require("ace/ext/modelist");
 editor.setOptions({
     enableBasicAutocompletion: true,
     enableSnippets: true,
