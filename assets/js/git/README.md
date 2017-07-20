@@ -13,13 +13,13 @@ Just download git.js and put it in your /js folder(or where ever you put your ja
 First you need to require git.js
 
 ```javascript
-var git = require('./assets/js/git/git.js') // ./assets/js/git/git.js is the location where you put git.js
+var git = require('./assets/js/git/git.js'); // ./assets/js/git/git.js is the location where you put git.js
 ```
 
 Then you need to set the directory of the repo
 
 ```javascript
-git.setRepo("C:/examplerepo")
+git.setRepo("C:/examplerepo");
 ```
 
 ### Pull
@@ -45,5 +45,5 @@ The commit message will just be the date in milliseconds.
 This will pull from the repository and then push the repo
 
 ```javascript
-git.sync()
+git.sync();
 ```
