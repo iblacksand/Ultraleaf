@@ -1,4 +1,8 @@
 function button1_click(){
-    var remote = require('electron').remote;
-    remote.createWindow('Overleaf-Web');
+    require('electron').remote.getGlobal('createOverleaf')();
+    // createWindow('Overleaf-Web.html');
+}
+
+function button2_click(){
+    require('electron').remote.getGlobal('createWindow')('OfflineEditor.html');
 }

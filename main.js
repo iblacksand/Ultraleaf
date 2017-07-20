@@ -7,7 +7,29 @@ const url = require('url');
 let windows= [];
 let windowcount = 0;
 
-function createWindow(urlpath) {
+global.createOverleaf = function(){
+  win = new BrowserWindow({width: 800, height: 600});
+  windows.push(win);
+  windowcount++;
+  // and load the index.html of the app.
+  win.loadURL("https://www.overleaf.com");
+
+  // Open the DevTools.
+  // win.webContents.openDevTools()
+
+  // Emitted when the window is closed.
+  win.on('closed', () => {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    let index = windows.indexOf(win);
+    if(index > -1) windows.splice(index, 1);
+    windowcount--;
+  });
+}
+
+
+global.createWindow = function(urlpath) {
   // Create the browser window.
   let win;
   //console.log(urlpath);
@@ -29,7 +51,9 @@ function createWindow(urlpath) {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    win = null;
+    let index = windows.indexOf(win);
+    if(index > -1) windows.splice(index, 1);
+    windowcount--;
   });
 }
 
