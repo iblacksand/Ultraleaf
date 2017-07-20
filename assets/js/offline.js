@@ -24,6 +24,23 @@ function getFile() {
     return x[0];
 }
 
+function saveFile() {
+    const { dialog } = require('electron').remote;  
+    const { remote } = require('electron');
+    let x = dialog.showSaveDialog(
+        remote.getCurrentWindow(),
+        {
+            defaultPath: 'c:/',
+            filters: [
+                { name: 'All Files', extensions: ['*'] },
+                { name: 'Tex File', extensions: ['tex'] }
+            ],
+            properties: ['saveFile']
+        }
+    );
+    return x;
+}
+
 function open_button() {
     fs = require('fs');
     let path = getFile();
@@ -34,4 +51,15 @@ function open_button() {
         editor.setValue(data);
         editor.clearSelection();
     });
+}
+
+function save_button(){
+    var fs = require('fs');
+fs.writeFile(saveFile(), editor.getValue(), function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+}); 
 }
