@@ -13,7 +13,7 @@ function log(message){
 }
 
 function test() {
-    var git = require('./assets/js/git.js');   // The power of Node.JS
+    var git = require('./assets/js/git/git.js');   // The power of Node.JS
     // git.sync("C:/Users/user/Documents/UltraleafTestingRepo")
     git.setRepo("C:/Users/user/Documents/UltraleafTestingRepo");
     git.sync();
