@@ -1,5 +1,5 @@
 var editor = ace.edit("editor");
-editor.setTheme("ace/theme/tomorrow");
+editor.setTheme("ace/theme/chrome");
 editor.session.setMode("ace/mode/latex");
 ace.require("ace/ext/language_tools");
 require("./assets/js/src-min-noconflict/ext-modelist");
@@ -70,7 +70,7 @@ function save_button() {
 
 function theme_change() {
     let theme = "";
-    let val = document.getElementById("theme").value;
+    let val = parseInt(document.getElementById("theme").value);
     switch (val) {
         case 0:
             theme = "chrome";
