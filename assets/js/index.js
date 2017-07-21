@@ -17,5 +17,8 @@ function test() {
     // git.sync();
     // log(git.tlog);
     var config = require('./assets/js/config.js');
-    config.test();
+    var newJson = {};
+    newJson.test = "hello world";
+    config.setConfig(newJson);
+    log(config.getAttribute("test"));
 }
