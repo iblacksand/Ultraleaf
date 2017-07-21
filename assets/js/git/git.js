@@ -67,3 +67,12 @@ exports.push = function(){
     const{exec} = require('child_process');
     exec("git push", {cwd: repo}, (err, stdout, stderr)=>{log(stdout)});
 }
+
+exports.clone = (dir,repourl) => {
+    const{exec} = require('child_process');
+    exec("git clone " + repourl, {cwd: dir}, (err, stdout, stderr)=>{log(stdout)});
+    let x = repourl.split('/');
+    if(dir.substring(dir.length - 1) != "/") dir += "/";
+    let y = x[x.length-1];
+    return dir + y.substring(0, y.length - 4);
+}

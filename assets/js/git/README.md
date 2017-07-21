@@ -22,6 +22,16 @@ Then you need to set the directory of the repo
 git.setRepo("C:/examplerepo");
 ```
 
+### Clone
+
+To clone a repo you need the repo url and the directory to clone the repo. 
+
+```javascript
+var repo = git.clone("C:/repos/", "https://github.com/iblacksand/Ultraleaf.git");
+console.log(repo)// This would log C:/repos/Ultraleaf
+```
+git.clone() returns the path of the cloned repo.
+
 ### Push
 
 To push the repo all you do is 
