@@ -177,7 +177,19 @@ function theme_change() {
     console.log("Chosen theme: " + theme);
 }
 
-function repo_button(){
+var repo = "";
+
+function repo_button_clone(){
     var git = require("./assets/js/git/git");
-    git.clone("")
+    console.log("cloning maybe");
+    var repourl = "https://github.com/iblacksand/UltraleafTestingRepo.git";
+    repo = git.clone("C:/Users/user/documents/", repourl);
+    console.log(repo);
+}
+function repo_button_push(){
+    var git = require("./assets/js/git/git");
+    console.log("pushing maybe");
+    git.setRepo(repo);
+    git.pushAll();
+    console.log(git.getLog());
 }

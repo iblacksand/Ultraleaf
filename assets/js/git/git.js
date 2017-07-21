@@ -1,7 +1,9 @@
 
 var exports = module.exports;
 
-var uselogging;
+var uselogging = true;
+
+var tlog = "";
 
 function log(message){
     if(uselogging) console.log(message + "\n");
@@ -23,14 +25,16 @@ exports.pushAll = function() {
     var d = new Date();
     exec("git add .", { cwd: repo }, (err, stdout, stderr) => {
         log(stdout);
-    });
-    exec("git commit -m \"" + d.getTime()  +"\"", { cwd: repo }, (err, stdout, stderr) => {
+        exec("git commit -m \"" + d.getTime()  +"\"", { cwd: repo }, (err, stdout, stderr) => {
         log(stdout);
+        exec("git push", { cwd: repo }, (err, stdout, stderr) => {
+        log(stdout);
+    });
+    });
     });
     
-    exec("git push", { cwd: repo }, (err, stdout, stderr) => {
-        log(stdout);
-    });
+    
+    
 
 }
 
@@ -74,5 +78,5 @@ exports.clone = (dir,repourl) => {
     let x = repourl.split('/');
     if(dir.substring(dir.length - 1) != "/") dir += "/";
     let y = x[x.length-1];
-    return dir + y.substring(0, y.length - 4);
+    return dir + y.substring(0, y.length -4) + "/";
 }
