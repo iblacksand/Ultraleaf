@@ -176,3 +176,8 @@ function theme_change() {
     editor.resize();
     console.log("Chosen theme: " + theme);
 }
+
+function repo_button(){
+    var git = require("./assets/js/git/git");
+    git.clone("")
+}

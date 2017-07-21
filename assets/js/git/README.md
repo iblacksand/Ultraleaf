@@ -112,3 +112,17 @@ Regardless of the settings set above, you can get the all of the console output 
 ```javascript
 git.getLog()
 ```
+
+
+## Example
+
+```javascript
+var git = require("./assets/js/git/git"); // require git
+var repo = git.clone("C:/repos", "https://github.com/iblacksand/Ultraleaf.git"); // clone repo
+git.setRepo(repo)// set the repo
+
+// Repo was modified
+
+git.pushAll(); // pushes all changes
+
+```
