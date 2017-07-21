@@ -177,7 +177,7 @@ function theme_change() {
     console.log("Chosen theme: " + theme);
 }
 
-var repo = "";
+var repo = "https://github.com/iblacksand/UltraleafTestingRepo.git";
 
 function repo_button_clone(){
     var git = require("./assets/js/git/git");
