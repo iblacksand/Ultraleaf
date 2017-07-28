@@ -16,9 +16,10 @@ function test() {
     // git.setRepo("C:/Users/user/Documents/UltraleafTestingRepo");
     // git.sync();
     // log(git.tlog);
-    var config = require('./assets/js/config.js');
-    var newJson = {};
-    newJson.test = "hello world";
-    config.setConfig(newJson);
-    log(config.getAttribute("test"));
+    // var config = require('./assets/js/config.js');
+    // var newJson = {};
+    // newJson.test = "hello world";
+    // config.setConfig(newJson);
+    // log(config.getAttribute("test"));
+    require('electron').remote.getGlobal('createWindow')('Settings.html');
 }

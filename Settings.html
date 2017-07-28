@@ -1,15 +1,26 @@
 <html>
-    <head>
-        <style type="text/css">
-            @import url("./node_modules/bulma/css/bulma.css");
-        </style>
-        <script type="text/javascript" src="assets/js/index.js"></script>
-    </head>
-    <body>
-        <center>
-        <button id="button1" class="button center" onclick="button1_click()">Use Overleaf's website</button>
-        <button id="button2" class="button center" onclick="button2_click()">Start Offline Editor</button>
-        <button id="testbutton" class="button" onclick="test()">Test</button>
-        </center>
-    </body>
+
+<head>
+    <style type="text/css">
+        @import url("./node_modules/bulma/css/bulma.css");
+        @import url("./assets/css/font-awesome.min.css");
+    </style>
+    <script type="text/javascript" src="assets/js/index.js"></script>
+</head>
+
+<body>
+        <div class="field">
+            <label class="label">Git Repo</label>
+            <p class="control has-icons-left">
+                <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                <span class="icon is-left">
+                    <i class="fa fa-code-fork"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control"><button class="button is-success">Submit</button></p>
+        </div>
+        </body>
+
 </html>
